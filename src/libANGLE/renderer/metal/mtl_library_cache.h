@@ -79,10 +79,10 @@ class LibraryCache : angle::NonCopyable
 
     std::shared_ptr<LibraryCacheEntry> getCacheEntry(LibraryKey &&key);
 
-    static constexpr unsigned int kMaxCachedLibraries = 128;
+    static constexpr unsigned int kMaxCachedLibraries = 2048;
 
     // The cache tries to clean up this many states at once.
-    static constexpr unsigned int kGCLimit = 32;
+    static constexpr unsigned int kGCLimit = 128;
 
     // Lock for searching and adding new entries to the cache
     std::mutex mCacheLock;
